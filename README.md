@@ -11,7 +11,7 @@ Projeto Contas a Pagar
 - DDD
 - SQL Server
 
-### Para testar o projeto
+### 🎲 Para testar o projeto
 
 <ol>
   <li>Compilar o projeto</li>
