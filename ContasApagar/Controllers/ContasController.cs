@@ -20,6 +20,12 @@ namespace ContasApagar.Controllers
             _InterfaceContaApp = interfaceContaApp;
         }
 
+        [HttpGet]
+        public async Task<List<Conta>> Get()
+        {
+            return await ListarContas();
+        }
+
         // GET: ContasController
         [Route("api/v1/ListarContas")]
         [HttpGet]       
