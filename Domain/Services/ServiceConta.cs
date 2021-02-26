@@ -32,6 +32,11 @@ namespace Domain.Services
             {
                 //Calcular multa e juros
                 var diasAtraso = VerificarQuantidadeDiasAtraso(conta);
+                var multa = RetornarPercentualMulta(diasAtraso);
+                var juros = RetornarPercentualJurosDia(diasAtraso);
+
+                conta.Multa = multa;
+                conta.Juros = juros;
 
                 conta.QuantidadeDiasAtraso = diasAtraso;
                 conta.DataInclusao = DateTime.Now;
@@ -77,10 +82,56 @@ namespace Domain.Services
 
             if (conta.DataPagamento > conta.DataVencimento)
             {
-                diasAtraso = (conta.DataPagamento - conta.DataVencimento).Days;
+                diasAtraso = (int)conta.DataPagamento.Subtract(conta.DataVencimento).TotalDays;
             }
 
             return diasAtraso;
+        }
+
+        private int RetornarPercentualMulta(int diasAtraso)
+        {
+            var multa = 0;
+
+            if (diasAtraso > 0)
+            {
+                if (diasAtraso <= 3)
+                {
+                    multa = 2;
+                }
+                else if (diasAtraso > 3 && diasAtraso <= 5)
+                {
+                    multa = 3;
+                }
+                else if (diasAtraso > 5)
+                {
+                    multa = 5;
+                }
+            }
+
+            return multa;
+        }
+
+        private decimal RetornarPercentualJurosDia(int diasAtraso)
+        {
+            decimal juros = 0;
+
+            if (diasAtraso > 0)
+            {
+                if (diasAtraso <= 3)
+                {
+                    juros = 0.1m;
+                }
+                else if (diasAtraso > 3 && diasAtraso <= 5)
+                {
+                    juros = 0.2m;
+                }
+                else if (diasAtraso > 5)
+                {
+                    juros = 0.3m;
+                }
+            }
+
+            return juros;
         }
 
     }

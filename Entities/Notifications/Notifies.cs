@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Entities.Notifications
 {
@@ -12,9 +13,11 @@ namespace Entities.Notifications
             Notitycoes = new List<Notifies>();
         }
 
+        [JsonIgnore]
         [NotMapped]
         public string NomePropriedade { get; set; }
 
+        [JsonIgnore]
         [NotMapped]
         public string mensagem { get; set; }
 

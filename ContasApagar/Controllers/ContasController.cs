@@ -57,7 +57,7 @@ namespace ContasApagar.Controllers
 
 
                 }
-                return Ok();
+                return Ok(conta);
             }
             catch (System.Exception ex)
             {

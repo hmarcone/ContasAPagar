@@ -2,12 +2,14 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Entities.Entities
 {
     [Table("tblConta")]
     public class Conta : Notifies
     {
+        [JsonIgnore]
         [Column("Id")]
         [Display(Name = "Código")]
         public int Id { get; set; }
@@ -29,6 +31,7 @@ namespace Entities.Entities
         [Display(Name = "Quantidades de dias de atraso")]
         public int QuantidadeDiasAtraso { get; set; }
 
+        //[JsonIgnore]
         [Column("DataVencimento")]
         [Display(Name = "Data do vencimento")]
         public DateTime DataVencimento { get; set; }
@@ -37,11 +40,16 @@ namespace Entities.Entities
         [Display(Name = "Data do pagamento")]
         public DateTime DataPagamento { get; set; }
 
+        //[JsonIgnore]
         public int Multa { get; set; }
 
+        //[JsonIgnore]
         public decimal Juros { get; set; }
 
+        [JsonIgnore]
         public DateTime DataInclusao { get; set; }
+
+        [JsonIgnore]
         public DateTime DataAtualizacao { get; set; }
     }
 }
