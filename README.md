@@ -21,5 +21,4 @@ Projeto Contas a Pagar
 
 ### Swagger
 
-- Url: <code>http://localhost:{port}/swagger<br/></code><br/>
-  Exemplo: https://localhost:44336/swagger/index.html
+- Url: <code>http://localhost:{port}/swagger<br/></code>
