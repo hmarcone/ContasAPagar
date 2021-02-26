@@ -34,6 +34,7 @@ namespace Domain.Services
                 var diasAtraso = VerificarQuantidadeDiasAtraso(conta);
                 var multa = RetornarPercentualMulta(diasAtraso);
                 var juros = RetornarPercentualJurosDia(diasAtraso);
+                var valorCorrigido = RetornarValorCorrigido(diasAtraso, multa, juros);
 
                 conta.Multa = multa;
                 conta.Juros = juros;
@@ -44,6 +45,11 @@ namespace Domain.Services
 
                 await _iConta.Add(conta);
             }
+        }
+
+        private object RetornarValorCorrigido(int diasAtraso, int multa, decimal juros)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<List<Conta>> ListarContaById(int id)
