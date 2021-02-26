@@ -4,6 +4,8 @@ Projeto Contas a Pagar
 ## Descrição do Projeto
 <p align="justify"> Este projeto visa controlar as contas a pagar </p>
 
+### Tecnologias utilizadas
+
 <ol>
   <li>Asp.Net Core 3.1.12</>
   <li>Entity Framework Core</>
