@@ -4,14 +4,12 @@ Projeto Contas a Pagar
 ## Descrição do Projeto
 <p align="justify"> Este projeto visa controlar as contas a pagar </p>
 
-### Tecnologias utilizadas
+### 🛠 Tecnologias
 
-<ol>
-  <li>Asp.Net Core 3.1.12</>
-  <li>Entity Framework Core</>
-  <li>DDD</>
-  <li>SQL Server</>
-</ol>
+- Asp.Net Core 3.1.12
+- Entity Framework Core
+- DDD
+- SQL Server
 
 ### Para testar o projeto
 
