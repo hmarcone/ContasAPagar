@@ -73,6 +73,23 @@ namespace Entities.Notifications
 
         }
 
+        public bool ValidarPropriedadeDateTime(string valor, string nomePropriedade)
+        {
+            DateTime value;
+
+            if (!DateTime.TryParse(valor, out value) || string.IsNullOrWhiteSpace(nomePropriedade))
+            {
+                Notitycoes.Add(new Notifies
+                {
+                    mensagem = "Data invalida!",
+                    NomePropriedade = nomePropriedade
+                });
+
+                return false;
+            }
+            return true;
+
+        }
 
     }
 }

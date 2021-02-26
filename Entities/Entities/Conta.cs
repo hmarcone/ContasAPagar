@@ -40,5 +40,8 @@ namespace Entities.Entities
         public int Multa { get; set; }
 
         public decimal Juros { get; set; }
+
+        public DateTime DataInclusao { get; set; }
+        public DateTime DataAtualizacao { get; set; }
     }
 }
