@@ -20,12 +20,12 @@ namespace Entities.Entities
         public string Nome { get; set; }
 
         //[RegularExpression(@"^\d+\.\d{0,2}$")]
-        [DisplayFormat(DataFormatString = "{0:C}")]
+        [DisplayFormat(DataFormatString = "{0:0.00}")]
         [Column("ValorOriginal")]
         [Display(Name = "Valor Original")]
         public decimal ValorOriginal { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:C}")]
+        [DisplayFormat(DataFormatString = "{0:0.00}")]
         [Column("ValorCorrigido")]
         [Display(Name = "Valor Corrigido")]
         public decimal ValorCorrigido { get; set; }
