@@ -69,8 +69,6 @@ namespace ContasApagar.Controllers
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Banco Dados Falhou {ex}");
             }
-
-            return BadRequest();
         }
 
         public class ResponseReturn

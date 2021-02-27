@@ -19,10 +19,13 @@ namespace Entities.Entities
         [MaxLength(255)]
         public string Nome { get; set; }
 
+        //[RegularExpression(@"^\d+\.\d{0,2}$")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         [Column("ValorOriginal")]
         [Display(Name = "Valor Original")]
         public decimal ValorOriginal { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:C}")]
         [Column("ValorCorrigido")]
         [Display(Name = "Valor Corrigido")]
         public decimal ValorCorrigido { get; set; }
