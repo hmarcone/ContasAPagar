@@ -78,9 +78,12 @@ namespace Entities.Notifications
 
         public bool ValidarPropriedadeDateTime(string valor, string nomePropriedade)
         {
-            DateTime value;
+            //DateTime value;
+            //var dataValida = DateTime.TryParse(valor, out value);
 
-            if (!DateTime.TryParse(valor, out value) || string.IsNullOrWhiteSpace(nomePropriedade))
+            var dataValida = DateTime.Parse(valor);
+
+            if (dataValida == DateTime.MinValue || string.IsNullOrWhiteSpace(nomePropriedade))
             {
                 Notitycoes.Add(new Notifies
                 {
