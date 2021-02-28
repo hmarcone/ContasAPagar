@@ -22,7 +22,7 @@ namespace XUnitTestContasAPagar
                 IServiceConta _iServiceConta = new ServiceConta(_iConta);
                 var conta = new Conta
                 {
-                    Nome = string.Concat("Descrição Test TDD", DateTime.Now.ToString()),
+                    Nome = string.Concat("Descrição Test TDD - ", DateTime.Now.ToString()),
                     ValorOriginal = 100m,
                     DataPagamento = new DateTime(2021,02,26),
                     DataVencimento = new DateTime(2021,02,23)
@@ -71,6 +71,48 @@ namespace XUnitTestContasAPagar
                 var listaProdutos = await _iConta.ListarContas();
 
                 Assert.True(listaProdutos.Any());
+            }
+            catch (Exception ex)
+            {
+
+                Assert.True(false, $@"Erro: {ex.Message}");
+            }
+        }
+
+        [Fact]
+        public async Task ListarContaById_Test()
+        {
+            try
+            {
+                IConta _iConta = new RepositoryConta();
+
+                var listaConta = await _iConta.ListarContas();
+                var ultimaConta = listaConta.LastOrDefault();
+
+                var conta = await _iConta.GetEntityById(ultimaConta.Id);
+
+                Assert.True(conta != null);
+            }
+            catch (Exception ex)
+            {
+
+                Assert.True(false, $@"Erro: {ex.Message}");
+            }
+        }
+
+        [Fact]
+        public async Task DeleteConta_Test()
+        {
+            try
+            {
+                IConta _iConta = new RepositoryConta();
+
+                var listaConta = await _iConta.ListarContas();
+                var ultimaConta = listaConta.LastOrDefault();
+
+                await _iConta.Delete(ultimaConta);
+
+                Assert.True(true);
             }
             catch (Exception ex)
             {

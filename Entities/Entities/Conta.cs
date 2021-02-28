@@ -43,10 +43,10 @@ namespace Entities.Entities
         [Display(Name = "Data do pagamento")]
         public DateTime DataPagamento { get; set; }
 
-        //[JsonIgnore]
+        [JsonIgnore]
         public int Multa { get; set; }
 
-        //[JsonIgnore]
+        [JsonIgnore]
         public decimal Juros { get; set; }
 
         [JsonIgnore]
