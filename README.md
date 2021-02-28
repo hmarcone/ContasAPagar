@@ -10,6 +10,8 @@ Projeto Contas a Pagar
 - Entity Framework Core
 - DDD
 - SQL Server
+- xUnit
+- Migration in Entity Framework Core
 
 ### 🎲 Para testar o projeto
 
